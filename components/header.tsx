@@ -129,7 +129,7 @@ export function Header() {
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" size="sm" className="gap-2 group">
                     <Globe className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                    <span className="hidden sm:inline">{language === "en" ? "EN" : "AR"}</span>
+                    <span className="hidden sm:inline">{language === "en" ? "EN" : language === "ar" ? "AR" : "中文"}</span>
                     <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -139,6 +139,9 @@ export function Header() {
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => setLanguage("ar")} className="cursor-pointer">
                     <span className="me-2">🇸🇦</span> العربية
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => setLanguage("zh")} className="cursor-pointer">
+                    <span className="me-2">🇨🇳</span> 中文
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
