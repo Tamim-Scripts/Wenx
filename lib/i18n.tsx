@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react"
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react"
 
 export type Language = "en" | "ar" | "zh"
 
@@ -648,15 +648,33 @@ const translations = {
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined)
+const LANGUAGE_STORAGE_KEY = "wenx-language"
+
+function applyDocumentLanguage(lang: Language) {
+  document.documentElement.lang = lang
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr"
+}
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>("en")
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang)
-    document.documentElement.lang = lang
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr"
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang)
+    applyDocumentLanguage(lang)
   }, [])
+
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY)
+
+    if (savedLanguage === "en" || savedLanguage === "ar" || savedLanguage === "zh") {
+      setLanguageState(savedLanguage)
+      applyDocumentLanguage(savedLanguage)
+      return
+    }
+
+    applyDocumentLanguage(language)
+  }, [language])
 
   const t = useCallback(
     (key: string) => {
