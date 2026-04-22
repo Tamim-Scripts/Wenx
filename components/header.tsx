@@ -37,6 +37,7 @@ export function Header() {
       ]
     },
     { href: "/services", label: t("nav.services") },
+    { href: "/partners", label: t("nav.partners") },
     { href: "/projects", label: t("nav.projects") },
     { href: "/media", label: t("nav.media") },
     { href: "/interviews", label: t("nav.interviews") },
