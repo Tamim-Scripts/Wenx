@@ -61,7 +61,7 @@ export function HeroSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[100vh] py-20">
           {/* Left Side - Content */}
-          <div className={`${dir === "rtl" ? "lg:order-2" : "lg:order-1"} order-2 lg:order-1`}>
+          <div className={`${dir === "rtl" ? "lg:order-2" : "lg:order-1"} order-1`}>
             {/* Animated Badge */}
             <FadeIn delay={0.1}>
               <motion.div 
@@ -139,7 +139,7 @@ export function HeroSection() {
           </div>
 
           {/* Right Side - Stats Preview */}
-          <div className={`${dir === "rtl" ? "lg:order-1" : "lg:order-2"} order-1 lg:order-2`}>
+          <div className={`${dir === "rtl" ? "lg:order-1" : "lg:order-2"} order-2`}>
             <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <StaggerItem>
                 <motion.div 

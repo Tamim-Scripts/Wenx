@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { useI18n } from "@/lib/i18n"
-import { MapPin, Mail, Phone } from "lucide-react"
+import { MapPin, Mail, Phone, Linkedin, Twitter, Facebook, Instagram } from "lucide-react"
 import { motion } from "framer-motion"
 import { FadeIn, StaggerContainer, StaggerItem, BounceIcon } from "@/components/animations"
 
@@ -21,6 +21,13 @@ export function Footer() {
     { href: "/tax", label: t("nav.tax") },
     { href: "/projects", label: t("nav.projects") },
     { href: "/contact", label: t("nav.contact") },
+  ]
+
+  const socialLinks = [
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-blue-500" },
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter", color: "hover:text-sky-500" },
+    { icon: Facebook, href: "https://facebook.com", label: "Facebook", color: "hover:text-blue-600" },
+    { icon: Instagram, href: "https://instagram.com", label: "Instagram", color: "hover:text-pink-500" },
   ]
 
   return (
@@ -151,10 +158,40 @@ export function Footer() {
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <p className="text-sm text-background/60">
                 &copy; {currentYear} {t("footer.company")}. {t("footer.rights")}.
               </p>
+              
+              {/* Social Media Icons */}
+              <motion.div 
+                className="flex items-center gap-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                {socialLinks.map((social, index) => {
+                  const Icon = social.icon
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center w-10 h-10 rounded-full bg-background/10 transition-all duration-300 ${social.color}`}
+                      whileHover={{ 
+                        scale: 1.2,
+                        backgroundColor: "rgba(255, 255, 255, 0.15)",
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      title={social.label}
+                    >
+                      <Icon className="w-4 h-4" />
+                    </motion.a>
+                  )
+                })}
+              </motion.div>
+
               <motion.div 
                 className="flex items-center gap-4"
                 whileHover={{ scale: 1.05 }}

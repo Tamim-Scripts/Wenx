@@ -124,6 +124,31 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@layer components {
+  .container {
+    width: min(calc(100% - 2rem), 82rem);
+    margin-inline: auto;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      width: min(calc(100% - 3rem), 82rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      width: min(calc(100% - 5rem), 78rem);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container {
+      width: min(calc(100% - 6rem), 80rem);
+    }
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
