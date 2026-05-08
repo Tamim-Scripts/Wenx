@@ -5,201 +5,206 @@ import { useI18n } from "@/lib/i18n"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, ArrowLeft } from "lucide-react"
 import { motion } from "framer-motion"
-import { 
-  FadeIn, 
-  FloatingElement, 
+import { HeroVisual } from "@/components/home/hero-visual"
+import {
+  FadeIn,
+  FloatingElement,
   AnimatedGradient,
   StaggerContainer,
   StaggerItem,
   MagneticButton,
-  PulseRing
+  PulseRing,
 } from "@/components/animations"
+
+const STATS = [
+  { id: "tax", value: "20%", labelKey: "stats.tax", descKey: "stats.tax.desc", valueKey: null },
+  { id: "ownership", value: "100%", labelKey: "stats.ownership", descKey: "stats.ownership.desc", valueKey: null },
+  { id: "minerals", value: null, labelKey: "stats.minerals", descKey: "stats.minerals.desc", valueKey: "stats.minerals.value" },
+  { id: "experience", value: null, labelKey: "stats.experience", descKey: "stats.experience.desc", valueKey: "stats.experience.value" },
+] as const
 
 export function HeroSection() {
   const { t, dir } = useI18n()
   const Arrow = dir === "rtl" ? ArrowLeft : ArrowRight
+  const isRtl = dir === "rtl"
 
   return (
-    <section className="relative min-h-[100vh] flex items-center overflow-hidden">
+    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-20 lg:pt-24">
       {/* Animated Background */}
       <AnimatedGradient />
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-accent/5" />
-      
-      {/* Floating decorative elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <FloatingElement duration={4} y={15} className="absolute top-20 right-[10%]">
-          <div className="w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+
+      {/* Floating decorative blobs */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <FloatingElement duration={4} y={15} className="absolute top-24 right-[8%]">
+          <div className="h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
         </FloatingElement>
-        <FloatingElement duration={5} y={20} className="absolute bottom-20 left-[5%]">
-          <div className="w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        <FloatingElement duration={5} y={20} className="absolute bottom-24 left-[4%]">
+          <div className="h-96 w-96 rounded-full bg-accent/10 blur-3xl" />
         </FloatingElement>
-        <FloatingElement duration={6} y={12} className="absolute top-1/2 left-1/2">
-          <div className="w-64 h-64 bg-primary/5 rounded-full blur-2xl" />
+        <FloatingElement duration={6} y={12} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="h-64 w-64 rounded-full bg-primary/5 blur-2xl" />
         </FloatingElement>
       </div>
 
-      {/* Animated grid pattern */}
+      {/* Subtle grid overlay */}
       <div className="absolute inset-0 opacity-[0.03]">
-        <motion.div 
-          className="w-full h-full"
+        <motion.div
+          className="h-full w-full"
           style={{
             backgroundImage: `linear-gradient(to right, currentColor 1px, transparent 1px),
                              linear-gradient(to bottom, currentColor 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
+            backgroundSize: "60px 60px",
           }}
-          animate={{ 
-            backgroundPosition: ['0px 0px', '60px 60px']
-          }}
-          transition={{ 
-            duration: 20, 
-            repeat: Infinity, 
-            ease: 'linear' 
-          }}
+          animate={{ backgroundPosition: ["0px 0px", "60px 60px"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
       </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[100vh] py-20">
-          {/* Left Side - Content */}
-          <div className={`${dir === "rtl" ? "lg:order-2" : "lg:order-1"} order-1`}>
-            {/* Animated Badge */}
-            <FadeIn delay={0.1}>
-              <motion.div 
-                className={`inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full mb-8 border border-green-300 ${dir === "rtl" ? "flex-row-reverse" : ""}`}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400 }}
-              >
-                <PulseRing>
-                  <div className="w-2 h-2 bg-green-600 rounded-full" />
-                </PulseRing>
-                <span className="text-sm font-medium text-green-700">{t("hero.badge")}</span>
-              </motion.div>
-            </FadeIn>
 
-            {/* Main Heading */}
-            <FadeIn delay={0.2}>
-              <h1 className={`text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight text-balance mb-6 ${dir === "rtl" ? "text-right" : "text-left"}`}>
-                {dir === "rtl" ? (
-                  <>
-                    المملكة العربية السعودية في{" "}
-                    <span className="text-amber-500">التوطين</span>
-                    {" "}و 
-                    <span className="text-green-600">الاستثمار</span>
-                    {" "}إلى بوابتك
-                  </>
-                ) : (
-                  <>
-                    Your Gateway to{" "}
-                    <span className="text-green-600">Investment</span>
-                    {" "}& 
-                    <span className="text-amber-500">Localization</span>
-                    {" "}in Saudi Arabia
-                  </>
-                )}
-              </h1>
-            </FadeIn>
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="flex flex-col gap-10 py-12 lg:gap-14 lg:py-16">
 
-            {/* Subtitle */}
-            <FadeIn delay={0.4}>
-              <p className={`text-lg sm:text-xl text-muted-foreground max-w-2xl mb-10 text-pretty ${dir === "rtl" ? "text-right" : "text-left"}`}>
-                {t("hero.subtitle")}
-              </p>
-            </FadeIn>
+          {/* ── Top hero row: content + visual ── */}
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-24">
 
-            {/* CTA Buttons */}
-            <FadeIn delay={0.5}>
-              <div className={`flex flex-col sm:flex-row items-start gap-4 ${dir === "rtl" ? "flex-row-reverse" : ""}`}>
-                <MagneticButton>
-                  <Link href="/contact">
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 h-14 text-base group">
-                        {t("hero.cta.start")}
-                        <motion.span 
-                          className={`inline-block ${dir === "rtl" ? "me-2" : "ms-2"}`}
-                          animate={{ x: [0, dir === "rtl" ? -4 : 4, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
+            {/* Content column */}
+            <div
+              className={`flex flex-col items-center text-center ${
+                isRtl ? "lg:order-2 lg:items-end lg:text-right" : "lg:order-1 lg:items-start lg:text-left"
+              }`}
+            >
+              {/* Live badge */}
+              <FadeIn delay={0.1}>
+                <motion.div
+                  className={`glass-chip mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 ${isRtl ? "flex-row-reverse" : ""}`}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  <PulseRing>
+                    <div className="h-2 w-2 rounded-full bg-green-600" />
+                  </PulseRing>
+                  <span className="text-sm font-medium text-green-700">{t("hero.badge")}</span>
+                </motion.div>
+              </FadeIn>
+
+              {/* Main heading */}
+              <FadeIn delay={0.2}>
+                <h1 className="mb-5 max-w-[20ch] text-4xl font-bold leading-[1.1] text-balance text-foreground sm:text-5xl lg:max-w-[16ch] lg:text-[3.2rem] xl:text-[3.75rem]">
+                  {isRtl ? (
+                    <>
+                      بوابتك إلى{" "}
+                      <span className="text-green-600">الاستثمار</span>
+                      {" "}و
+                      <span className="text-amber-500"> التوطين</span>
+                      {" "}في المملكة العربية السعودية
+                    </>
+                  ) : (
+                    <>
+                      Your Gateway to{" "}
+                      <span className="text-green-600">Investment</span>
+                      {" "}&{" "}
+                      <span className="text-amber-500">Localization</span>
+                      {" "}in Saudi Arabia
+                    </>
+                  )}
+                </h1>
+              </FadeIn>
+
+              {/* Subtitle */}
+              <FadeIn delay={0.35}>
+                <p className="mb-8 max-w-[42ch] text-base leading-relaxed text-muted-foreground text-pretty sm:text-lg">
+                  {t("hero.subtitle")}
+                </p>
+              </FadeIn>
+
+              {/* CTA Buttons */}
+              <FadeIn delay={0.45}>
+                <div
+                  className={`flex flex-col items-center gap-3 sm:flex-row ${isRtl ? "sm:flex-row-reverse" : ""}`}
+                >
+                  <MagneticButton>
+                    <Link href="/contact">
+                      <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                        <Button
+                          size="lg"
+                          className="glass-panel-strong h-12 bg-primary/90 px-8 text-base text-primary-foreground hover:bg-primary"
                         >
-                          <Arrow className="w-5 h-5" />
-                        </motion.span>
-                      </Button>
-                    </motion.div>
-                  </Link>
-                </MagneticButton>
-                <MagneticButton>
-                  <Link href="/services">
-                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Button size="lg" variant="outline" className="px-8 h-14 text-base border-2">
-                        {t("hero.cta.explore")}
-                      </Button>
-                    </motion.div>
-                  </Link>
-                </MagneticButton>
-              </div>
+                          {t("hero.cta.start")}
+                          <motion.span
+                            className={`inline-block ${isRtl ? "me-2" : "ms-2"}`}
+                            animate={{ x: [0, isRtl ? -4 : 4, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                          >
+                            <Arrow className="h-5 w-5" />
+                          </motion.span>
+                        </Button>
+                      </motion.div>
+                    </Link>
+                  </MagneticButton>
+
+                  <MagneticButton>
+                    <Link href="/services">
+                      <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+                        <Button
+                          size="lg"
+                          variant="outline"
+                          className="glass-panel h-12 border-white/40 px-8 text-base"
+                        >
+                          {t("hero.cta.explore")}
+                        </Button>
+                      </motion.div>
+                    </Link>
+                  </MagneticButton>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* Visual column */}
+            <FadeIn
+              delay={0.25}
+              className={`flex items-center justify-center ${isRtl ? "lg:order-1" : "lg:order-2"}`}
+            >
+              <HeroVisual />
             </FadeIn>
           </div>
 
-          {/* Right Side - Stats Preview */}
-          <div className={`${dir === "rtl" ? "lg:order-1" : "lg:order-2"} order-2`}>
-            <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <StaggerItem>
-                <motion.div 
-                  className="p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg hover:border-green-500/30 transition-all cursor-default"
-                  whileHover={{ y: -5 }}
+          {/* ── Stats row: 4 columns on desktop, 2 on mobile ── */}
+          <StaggerContainer
+            staggerDelay={0.1}
+            className="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5"
+          >
+            {STATS.map((stat) => (
+              <StaggerItem key={stat.id}>
+                <motion.div
+                  className="glass-panel flex cursor-default flex-col items-center rounded-2xl p-5 text-center transition-all hover:border-green-500/30 hover:shadow-lg"
+                  whileHover={{ y: -4 }}
                 >
-                  <p className="text-4xl font-bold text-green-600 mb-2">20%</p>
-                  <p className={`font-semibold text-foreground mb-1 ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.tax")}</p>
-                  <p className={`text-sm text-muted-foreground ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.tax.desc")}</p>
+                  <p className="mb-1 text-2xl font-bold text-green-600 sm:text-3xl">
+                    {stat.valueKey ? t(stat.valueKey) : stat.value}
+                  </p>
+                  <p className="mb-1 text-sm font-semibold text-foreground">{t(stat.labelKey)}</p>
+                  <p className="text-xs leading-relaxed text-muted-foreground">{t(stat.descKey)}</p>
                 </motion.div>
               </StaggerItem>
-              <StaggerItem>
-                <motion.div 
-                  className="p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg hover:border-green-500/30 transition-all cursor-default"
-                  whileHover={{ y: -5 }}
-                >
-                  <p className="text-4xl font-bold text-green-600 mb-2">100%</p>
-                  <p className={`font-semibold text-foreground mb-1 ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.ownership")}</p>
-                  <p className={`text-sm text-muted-foreground ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.ownership.desc")}</p>
-                </motion.div>
-              </StaggerItem>
-              <StaggerItem>
-                <motion.div 
-                  className="p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg hover:border-green-500/30 transition-all cursor-default"
-                  whileHover={{ y: -5 }}
-                >
-                  <p className="text-4xl font-bold text-green-600 mb-2">{t("stats.minerals.value")}</p>
-                  <p className={`font-semibold text-foreground mb-1 ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.minerals")}</p>
-                  <p className={`text-sm text-muted-foreground ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.minerals.desc")}</p>
-                </motion.div>
-              </StaggerItem>
-              <StaggerItem>
-                <motion.div 
-                  className="p-6 bg-card rounded-xl border border-border shadow-sm hover:shadow-lg hover:border-green-500/30 transition-all cursor-default"
-                  whileHover={{ y: -5 }}
-                >
-                  <p className="text-4xl font-bold text-green-600 mb-2">{t("stats.experience.value")}</p>
-                  <p className={`font-semibold text-foreground mb-1 ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.experience")}</p>
-                  <p className={`text-sm text-muted-foreground ${dir === "rtl" ? "text-right" : "text-left"}`}>{t("stats.experience.desc")}</p>
-                </motion.div>
-              </StaggerItem>
-            </StaggerContainer>
-          </div>
+            ))}
+          </StaggerContainer>
         </div>
       </div>
 
-      {/* Animated Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 lg:block"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
       >
-        <motion.div 
-          className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center cursor-pointer"
-          whileHover={{ borderColor: 'hsl(var(--primary))' }}
-          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
+        <motion.div
+          className="flex h-10 w-6 cursor-pointer justify-center rounded-full border-2 border-muted-foreground/30"
+          whileHover={{ borderColor: "hsl(var(--primary))" }}
+          onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
         >
-          <motion.div 
-            className="w-1.5 h-3 bg-primary rounded-full mt-2"
+          <motion.div
+            className="mt-2 h-3 w-1.5 rounded-full bg-primary"
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           />

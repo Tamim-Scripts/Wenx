@@ -48,7 +48,7 @@ export function Header() {
     <motion.header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm" 
+          ? "glass-panel border-b border-white/30 shadow-sm" 
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -127,7 +127,7 @@ export function Header() {
             >
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="gap-2 group">
+                  <Button variant="ghost" size="sm" className="glass-chip gap-2 group border-white/40">
                     <Globe className="w-4 h-4 group-hover:rotate-12 transition-transform" />
                     <span className="hidden sm:inline">{language === "en" ? "EN" : language === "ar" ? "AR" : "中文"}</span>
                     <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform" />
@@ -155,7 +155,7 @@ export function Header() {
             >
               <Link href="/contact">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button className="bg-primary hover:bg-primary/90">
+                  <Button className="glass-panel-strong bg-primary/90 hover:bg-primary">
                     {t("hero.cta.contact")}
                   </Button>
                 </motion.div>
@@ -172,6 +172,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="icon"
+                className="glass-chip border-white/40"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 <AnimatePresence mode="wait">
@@ -206,7 +207,7 @@ export function Header() {
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.nav 
-              className="lg:hidden py-4 border-t border-border overflow-hidden"
+              className="glass-panel mt-3 overflow-hidden rounded-2xl border border-white/35 py-4 lg:hidden"
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -250,7 +251,7 @@ export function Header() {
                     ) : (
                       <Link
                         href={item.href!}
-                        className="block px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-colors"
+                        className="block rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/30 hover:text-foreground"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -266,7 +267,7 @@ export function Header() {
                   className="mt-2"
                 >
                   <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    <Button className="w-full bg-primary hover:bg-primary/90">
+                    <Button className="glass-panel-strong w-full bg-primary/90 hover:bg-primary">
                       {t("hero.cta.contact")}
                     </Button>
                   </Link>
