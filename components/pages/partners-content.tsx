@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useI18n } from "@/lib/i18n"
 import { motion } from "framer-motion"
 import { 
@@ -23,8 +24,7 @@ import {
   FloatingElement,
   AnimatedGradient,
   StaggerContainer,
-  StaggerItem,
-  BounceIcon
+  StaggerItem
 } from "@/components/animations"
 
 const governmentPartners = [
@@ -32,6 +32,7 @@ const governmentPartners = [
     name: "Ministry of Investment (MISA)",
     nameAr: "وزارة الاستثمار",
     icon: Building2,
+    logo: "/Ministry_of_Investment.svg",
     description: "Investment licensing, regulatory support, and business establishment guidance",
     descriptionAr: "ترخيص الاستثمار، الدعم التنظيمي، وتوجيه تأسيس الأعمال",
     focus: ["Investment Licensing", "Regulatory Support", "Business Guidance"],
@@ -41,6 +42,7 @@ const governmentPartners = [
     name: "MODON - Industrial Cities",
     nameAr: "مدن - المدن الصناعية",
     icon: Briefcase,
+    logo: "/modon.png",
     description: "Industrial infrastructure, industrial zones, and manufacturing support",
     descriptionAr: "البنية التحتية الصناعية، المناطق الصناعية، دعم التصنيع",
     focus: ["Industrial Infrastructure", "Zone Management", "Manufacturing Support"],
@@ -50,6 +52,7 @@ const governmentPartners = [
     name: "SIDF - Industrial Development",
     nameAr: "صندوق التنمية الصناعية",
     icon: Shield,
+    logo: "/Saudi_Industrial_Development_Fund.png",
     description: "Industrial financing, loans, and development programs for factories",
     descriptionAr: "التمويل الصناعي، القروض، وبرامج التطوير للمصانع",
     focus: ["Industrial Financing", "Loan Programs", "Development Support"],
@@ -59,6 +62,7 @@ const governmentPartners = [
     name: "LCGPA - Local Content Authority",
     nameAr: "هيئة المحتوى المحلي",
     icon: Users,
+    logo: null,
     description: "Local content development and government procurement opportunities",
     descriptionAr: "تطوير المحتوى المحلي وفرص المشتريات الحكومية",
     focus: ["Local Content", "Procurement Programs", "Incentives"],
@@ -213,10 +217,22 @@ export function PartnersContent() {
                     {/* Content */}
                     <div className="relative z-10">
                       <motion.div 
-                        className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300 mb-6"
-                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        className="mb-6 flex h-20 items-center"
+                        whileHover={{ scale: 1.05 }}
                       >
-                        <PartnerIcon className="w-7 h-7 text-primary" />
+                        {partner.logo ? (
+                          <Image
+                            src={partner.logo}
+                            alt={`${language === "ar" ? partner.nameAr : partner.name} logo`}
+                            width={190}
+                            height={80}
+                            className="max-h-16 w-auto object-contain"
+                          />
+                        ) : (
+                          <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary/20">
+                            <PartnerIcon className="w-7 h-7 text-primary" />
+                          </div>
+                        )}
                       </motion.div>
 
                       <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">

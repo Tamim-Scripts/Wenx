@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useI18n } from "@/lib/i18n"
 import { Building2, Briefcase, Handshake, Shield, ArrowRight, ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -10,18 +11,21 @@ import { FadeIn, StaggerContainer, StaggerItem, HoverCard, BounceIcon } from "@/
 const governmentPartners = [
   {
     icon: Building2,
+    logo: "/Ministry_of_Investment.svg",
     titleKey: "partners.misa",
     descKey: "partners.misa.desc",
     color: "from-primary/20 to-primary/5",
   },
   {
     icon: Briefcase,
+    logo: "/modon.png",
     titleKey: "partners.modon",
     descKey: "partners.modon.desc",
     color: "from-accent/20 to-accent/5",
   },
   {
     icon: Shield,
+    logo: "/Saudi_Industrial_Development_Fund.png",
     titleKey: "partners.sidf",
     descKey: "partners.sidf.desc",
     color: "from-foreground/20 to-foreground/5",
@@ -118,14 +122,23 @@ export function PartnersSection() {
 
                     {/* Icon */}
                     <motion.div 
-                      className="mb-6 relative z-10"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="mb-6 relative z-10 flex h-20 items-center"
+                      whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <BounceIcon 
-                        icon={partner.icon} 
-                        className="w-12 h-12 text-primary" 
-                      />
+                      {partner.logo ? (
+                        <Image
+                          src={partner.logo}
+                          alt={`${t(partner.titleKey)} logo`}
+                          width={180}
+                          height={80}
+                          className="max-h-16 w-auto object-contain"
+                        />
+                      ) : (
+                        <BounceIcon>
+                          <partner.icon className="w-12 h-12 text-primary" />
+                        </BounceIcon>
+                      )}
                     </motion.div>
 
                     {/* Content */}
@@ -181,10 +194,9 @@ export function PartnersSection() {
                       whileHover={{ scale: 1.1, rotate: -5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <BounceIcon 
-                        icon={partner.icon} 
-                        className="w-12 h-12 text-accent" 
-                      />
+                      <BounceIcon>
+                        <partner.icon className="w-12 h-12 text-accent" />
+                      </BounceIcon>
                     </motion.div>
 
                     {/* Content */}
