@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState, useEffect } from "react"
 import { Menu, X, Globe, ChevronDown } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
@@ -58,22 +59,21 @@ export function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center group" aria-label="WenX Investment Service home">
             <motion.div 
-              className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center overflow-hidden"
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              className="relative h-10 w-32 overflow-hidden sm:h-12 sm:w-40"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-primary-foreground font-bold text-xl">W</span>
+              <Image
+                src="/logo-wordmark.png"
+                alt="WenX Investment Service"
+                fill
+                priority
+                sizes="(min-width: 640px) 160px, 128px"
+                className="object-contain"
+              />
             </motion.div>
-            <motion.span 
-              className="font-bold text-xl text-foreground hidden sm:block"
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              WenX
-            </motion.span>
           </Link>
 
           {/* Desktop Navigation */}

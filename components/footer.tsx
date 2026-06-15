@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useI18n } from "@/lib/i18n"
 import { MapPin, Mail, Phone, Linkedin, Twitter, Facebook, Instagram } from "lucide-react"
 import { motion } from "framer-motion"
@@ -47,16 +48,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Column */}
           <FadeIn delay={0.1} className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4 group">
+            <Link href="/" className="mb-4 inline-flex group" aria-label="WenX Investment Service home">
               <motion.div 
-                className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center"
-                whileHover={{ rotate: 10, scale: 1.1 }}
+                className="relative h-14 w-44 overflow-hidden"
+                whileHover={{ scale: 1.05 }}
               >
-                <span className="text-accent-foreground font-bold text-xl">W</span>
+                <Image
+                  src="/logo-wordmark.png"
+                  alt="WenX Investment Service"
+                  fill
+                  sizes="176px"
+                  className="object-contain"
+                />
               </motion.div>
-              <span className="font-bold text-xl group-hover:text-accent transition-colors">
-                {t("footer.company")}
-              </span>
             </Link>
             <p className="text-background/70 text-sm leading-relaxed">
               {t("footer.tagline")}
