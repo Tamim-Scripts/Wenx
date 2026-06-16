@@ -175,7 +175,7 @@ export function MediaContent() {
           emptyTitle: "No articles in this category yet",
           emptyBody: "Try another category or switch back to all articles.",
           stayUpdatedTitle: "Want to Stay Updated?",
-          stayUpdatedBody: "Subscribe to our newsletter for the latest insights and articles.",
+          stayUpdatedBody: "Subscribe to our newsletter for the latest news and articles.",
           emailPlaceholder: "Your email",
           subscribe: "Subscribe",
         }

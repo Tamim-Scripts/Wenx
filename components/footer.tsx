@@ -13,14 +13,12 @@ export function Footer() {
 
   const quickLinks = [
     { href: "/", label: t("nav.home") },
-    { href: "/investment", label: t("nav.investment") },
     { href: "/services", label: t("nav.services") },
-    { href: "/localization", label: t("nav.localization") },
+    { href: "/projects", label: t("nav.projects") },
+    { href: "/media", label: t("nav.media") },
   ]
 
   const supportLinks = [
-    { href: "/tax", label: t("nav.tax") },
-    { href: "/projects", label: t("nav.projects") },
     { href: "/contact", label: t("nav.contact") },
   ]
 

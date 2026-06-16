@@ -29,19 +29,9 @@ export function Header() {
 
   const navItems = [
     { href: "/", label: t("nav.home") },
-    { 
-      label: t("nav.insights"), 
-      submenu: [
-        { href: "/investment", label: t("nav.investment") },
-        { href: "/localization", label: t("nav.localization") },
-        { href: "/tax", label: t("nav.tax") },
-      ]
-    },
     { href: "/services", label: t("nav.services") },
-    { href: "/partners", label: t("nav.partners") },
     { href: "/projects", label: t("nav.projects") },
     { href: "/media", label: t("nav.media") },
-    { href: "/interviews", label: t("nav.interviews") },
     { href: "/contact", label: t("nav.contact") },
   ]
 
@@ -85,35 +75,15 @@ export function Header() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.05 }}
               >
-                {item.submenu ? (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group">
-                        {item.label}
-                        <ChevronDown className="w-3 h-3 group-data-[state=open]:rotate-180 transition-transform" />
-                      </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align={dir === "rtl" ? "start" : "end"}>
-                      {item.submenu.map((subitem) => (
-                        <DropdownMenuItem key={subitem.href} asChild>
-                          <Link href={subitem.href} className="cursor-pointer">
-                            {subitem.label}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                ) : (
-                  <Link
-                    href={item.href!}
-                    className="relative px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
-                  >
-                    {item.label}
-                    <motion.span 
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
-                    />
-                  </Link>
-                )}
+                <Link
+                  href={item.href}
+                  className="relative px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
+                >
+                  {item.label}
+                  <motion.span 
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"
+                  />
+                </Link>
               </motion.div>
             ))}
           </nav>
@@ -232,31 +202,13 @@ export function Header() {
                       closed: { opacity: 0, x: -20 }
                     }}
                   >
-                    {item.submenu ? (
-                      <div className="px-4 py-3">
-                        <div className="text-sm font-medium text-muted-foreground mb-2">{item.label}</div>
-                        <div className="ps-3 space-y-2 border-s border-muted-foreground/20">
-                          {item.submenu.map((subitem) => (
-                            <Link
-                              key={subitem.href}
-                              href={subitem.href}
-                              className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
-                              onClick={() => setMobileMenuOpen(false)}
-                            >
-                              {subitem.label}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <Link
-                        href={item.href!}
-                        className="block rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/30 hover:text-foreground"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
+                    <Link
+                      href={item.href}
+                      className="block rounded-lg px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/30 hover:text-foreground"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
                   </motion.div>
                 ))}
                 <motion.div

@@ -15,15 +15,9 @@ const translations = {
   en: {
     // Navigation
     "nav.home": "Home",
-    "nav.insights": "Insights",
-    "nav.investment": "Investment Environment",
     "nav.services": "Services",
-    "nav.localization": "Industrial Localization",
-    "nav.tax": "Tax Overview",
-    "nav.partners": "Partners",
     "nav.projects": "Projects",
     "nav.media": "Media",
-    "nav.interviews": "Interviews",
     "nav.contact": "Contact Us",
     
     // Hero
@@ -178,29 +172,6 @@ const translations = {
     "tax.customs": "Customs Duties",
     "tax.customs.rate": "5-15%",
     
-    // Partners Page
-    "partners.title": "Our Partners",
-    "partners.subtitle": "Strategic partnerships driving success",
-    "partners.badge": "Strategic Partnerships",
-    "partners.section.title": "Strategic Partners",
-    "partners.section.desc": "We collaborate with leading institutions and government bodies to provide comprehensive investment solutions",
-    "partners.government": "Government Partners",
-    "partners.misa": "Ministry of Investment",
-    "partners.misa.desc": "Investment licensing and regulatory support for business establishment",
-    "partners.modon": "MODON",
-    "partners.modon.desc": "Industrial cities infrastructure and industrial zone management",
-    "partners.sidf": "Saudi Industrial Development Fund",
-    "partners.sidf.desc": "Industrial financing and development support for manufacturing projects",
-    "partners.lcgpa": "Local Content & Government Procurement Authority",
-    "partners.lcgpa.desc": "Supporting local content development and government procurement programs",
-    "partners.corporate": "Corporate Partners",
-    "partners.financial": "Financial Institutions",
-    "partners.financial.desc": "Banks and financial services for business funding and operations",
-    "partners.consulting": "Consulting Firms",
-    "partners.consulting.desc": "Strategic consulting and business advisory services",
-    "partners.cta": "Become a Partner",
-    "partners.cta.desc": "Join our network of strategic partners",
-    
     // Projects Page
     "projects.title": "Projects & Recognition",
     "projects.subtitle": "Our partnerships and success stories",
@@ -226,20 +197,12 @@ const translations = {
     
     // Media Page
     "media.title": "Media & Publications",
-    "media.subtitle": "Stay updated with our latest insights and articles",
+    "media.subtitle": "Stay updated with our latest news and articles",
     "media.articles": "Featured Articles",
     "media.press": "Press Releases",
     "media.category": "Category",
     "media.date": "Date",
     "media.readmore": "Read More",
-    
-    // Interviews Page
-    "interviews.title": "Executive Interviews",
-    "interviews.subtitle": "Industry leaders share insights on Saudi investment",
-    "interviews.featured": "Featured Interviews",
-    "interviews.topics": "Topics",
-    "interviews.duration": "Duration",
-    "interviews.watch": "Watch Interview",
     
     // Footer
     "footer.rights": "All Rights Reserved",
@@ -249,15 +212,9 @@ const translations = {
   ar: {
     // Navigation
     "nav.home": "الرئيسية",
-    "nav.insights": "رؤى",
-    "nav.investment": "بيئة الاستثمار",
     "nav.services": "خدماتنا",
-    "nav.localization": "التوطين الصناعي",
-    "nav.tax": "نظرة على الضرائب",
-    "nav.partners": "شركاؤنا",
     "nav.projects": "المشاريع",
     "nav.media": "وسائل الإعلام",
-    "nav.interviews": "المقابلات",
     "nav.contact": "اتصل بنا",
     
     // Hero
@@ -412,29 +369,6 @@ const translations = {
     "tax.customs": "الرسوم الجمركية",
     "tax.customs.rate": "5-15%",
     
-    // Partners Page
-    "partners.title": "شركاؤنا",
-    "partners.subtitle": "شراكات استراتيجية تدفع النجاح",
-    "partners.badge": "شراكات استراتيجية",
-    "partners.section.title": "الشركاء الاستراتيجيون",
-    "partners.section.desc": "نتعاون مع المؤسسات الرائدة والجهات الحكومية لتقديم حلول استثمارية شاملة",
-    "partners.government": "الشركاء الحكوميون",
-    "partners.misa": "وزارة الاستثمار",
-    "partners.misa.desc": "ترخيص الاستثمار والدعم التنظيمي لتأسيس الشركات",
-    "partners.modon": "مدن",
-    "partners.modon.desc": "البنية التحتية للمدن الصناعية وإدارة المناطق الصناعية",
-    "partners.sidf": "صندوق التنمية الصناعية السعودي",
-    "partners.sidf.desc": "تمويل التنمية الصناعية والدعم لمشاريع التصنيع",
-    "partners.lcgpa": "هيئة المحتوى المحلي والمشتريات الحكومية",
-    "partners.lcgpa.desc": "دعم تطوير المحتوى المحلي وبرامج المشتريات الحكومية",
-    "partners.corporate": "الشركاء الماليون",
-    "partners.financial": "المؤسسات المالية",
-    "partners.financial.desc": "البنوك والخدمات المالية لتمويل الأعمال والعمليات",
-    "partners.consulting": "شركات الاستشارات",
-    "partners.consulting.desc": "خدمات الاستشارات الاستراتيجية والاستشارات التجارية",
-    "partners.cta": "كن شريكاً معنا",
-    "partners.cta.desc": "انضم إلى شبكة شركائنا الاستراتيجيين",
-    
     // Projects Page
     "projects.title": "المشاريع والتقدير",
     "projects.subtitle": "شراكاتنا وقصص النجاح",
@@ -467,14 +401,6 @@ const translations = {
     "media.date": "التاريخ",
     "media.readmore": "اقرأ المزيد",
     
-    // Interviews Page
-    "interviews.title": "مقابلات الأعمال التنفيذية",
-    "interviews.subtitle": "يشاركك قادة الصناعة رؤاهم حول الاستثمار السعودي",
-    "interviews.featured": "المقابلات المميزة",
-    "interviews.topics": "المواضيع",
-    "interviews.duration": "المدة",
-    "interviews.watch": "مشاهدة المقابلة",
-    
     // Footer
     "footer.rights": "جميع الحقوق محفوظة",
     "footer.company": "وينكس لخدمات الاستثمار",
@@ -483,15 +409,9 @@ const translations = {
   zh: {
     // Navigation
     "nav.home": "主页",
-    "nav.insights": "洞察",
-    "nav.investment": "投资环境",
     "nav.services": "服务",
-    "nav.localization": "工业本地化",
-    "nav.tax": "税收概览",
-    "nav.partners": "合作伙伴",
     "nav.projects": "项目",
     "nav.media": "媒体",
-    "nav.interviews": "访谈",
     "nav.contact": "联系我们",
     
     // Hero
@@ -646,29 +566,6 @@ const translations = {
     "tax.customs": "关税",
     "tax.customs.rate": "5-15%",
     
-    // Partners Page
-    "partners.title": "我们的合作伙伴",
-    "partners.subtitle": "推动成功的战略伙伴关系",
-    "partners.badge": "战略伙伴关系",
-    "partners.section.title": "战略合作伙伴",
-    "partners.section.desc": "我们与领先机构和政府部门合作，提供全面的投资解决方案",
-    "partners.government": "政府合作伙伴",
-    "partners.misa": "投资部",
-    "partners.misa.desc": "为企业设立提供投资许可证和监管支持",
-    "partners.modon": "MODON",
-    "partners.modon.desc": "工业城市基础设施和工业区管理",
-    "partners.sidf": "沙特工业发展基金",
-    "partners.sidf.desc": "为制造项目提供工业融资和发展支持",
-    "partners.lcgpa": "本地内容和政府采购委员会",
-    "partners.lcgpa.desc": "支持本地内容发展和政府采购计划",
-    "partners.corporate": "企业合作伙伴",
-    "partners.financial": "金融机构",
-    "partners.financial.desc": "为业务融资和运营提供银行和金融服务",
-    "partners.consulting": "咨询公司",
-    "partners.consulting.desc": "战略咨询和业务顾问服务",
-    "partners.cta": "成为合作伙伴",
-    "partners.cta.desc": "加入我们的战略伙伴网络",
-    
     // Projects Page
     "projects.title": "项目与认可",
     "projects.subtitle": "我们的伙伴关系和成功案例",
@@ -694,20 +591,12 @@ const translations = {
     
     // Media Page
     "media.title": "媒体和出版物",
-    "media.subtitle": "随时了解我们的最新见解和文章",
+    "media.subtitle": "随时了解我们的最新新闻和文章",
     "media.articles": "特色文章",
     "media.press": "新闻稿",
     "media.category": "分类",
     "media.date": "日期",
     "media.readmore": "阅读更多",
-    
-    // Interviews Page
-    "interviews.title": "高管访谈",
-    "interviews.subtitle": "业界领袖分享沙特投资见解",
-    "interviews.featured": "特色访谈",
-    "interviews.topics": "主题",
-    "interviews.duration": "时长",
-    "interviews.watch": "观看访谈",
     
     // Footer
     "footer.rights": "版权所有",
