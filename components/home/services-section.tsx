@@ -71,9 +71,9 @@ export function ServicesSection() {
               <Link href={service.href}>
                 <HoverCard className="h-full">
                   <motion.div 
-                    className={`group p-8 bg-card rounded-2xl border border-border hover:border-primary/30 transition-all duration-300 h-full relative overflow-hidden`}
+                    className={`gold-gradient-border group relative h-full overflow-hidden rounded-2xl bg-card p-8 transition-all duration-300`}
                     whileHover={{ 
-                      boxShadow: "0 20px 40px -15px rgba(0, 108, 53, 0.15)"
+                      boxShadow: "0 20px 40px -15px rgba(31, 79, 143, 0.18)"
                     }}
                   >
                     {/* Gradient overlay on hover */}

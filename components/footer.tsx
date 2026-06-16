@@ -23,17 +23,17 @@ export function Footer() {
   ]
 
   const socialLinks = [
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:text-blue-500" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter", color: "hover:text-sky-500" },
-    { icon: Facebook, href: "https://facebook.com", label: "Facebook", color: "hover:text-blue-600" },
-    { icon: Instagram, href: "https://instagram.com", label: "Instagram", color: "hover:text-pink-500" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
   ]
 
   return (
-    <footer className="bg-foreground text-background relative overflow-hidden">
+    <footer className="relative overflow-hidden bg-foreground text-background">
       {/* Animated background */}
       <motion.div 
-        className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"
         animate={{ 
           x: [0, 30, 0],
           y: [0, -20, 0],
@@ -180,7 +180,7 @@ export function Footer() {
                       href={social.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`inline-flex items-center justify-center w-10 h-10 rounded-full bg-background/10 transition-all duration-300 ${social.color}`}
+                      className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-background/10 text-background/80 transition-all duration-300 hover:text-accent"
                       whileHover={{ 
                         scale: 1.2,
                         backgroundColor: "rgba(255, 255, 255, 0.15)",

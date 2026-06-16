@@ -255,8 +255,8 @@ export function ServicesContent() {
                 <StaggerItem key={index}>
                   <HoverCard>
                     <motion.div
-                      className="flex items-center gap-4 p-6 bg-card rounded-xl border border-border hover:border-primary/30 transition-all cursor-default"
-                      whileHover={{ x: dir === "rtl" ? -8 : 8, boxShadow: "0 10px 30px -10px rgba(0,108,53,0.2)" }}
+                      className="gold-gradient-border flex items-center gap-4 rounded-xl bg-card p-6 transition-all cursor-default"
+                      whileHover={{ x: dir === "rtl" ? -8 : 8, boxShadow: "0 10px 30px -10px rgba(31,79,143,0.22)" }}
                     >
                       <BounceIcon>
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
@@ -304,8 +304,8 @@ export function ServicesContent() {
                 <StaggerItem key={index}>
                   <HoverCard className="h-full">
                     <motion.div
-                      className="flex items-center gap-4 p-6 bg-card rounded-xl border border-border hover:border-accent/30 transition-all h-full"
-                      whileHover={{ y: -5, boxShadow: "0 15px 30px -10px rgba(218,165,32,0.15)" }}
+                      className="gold-gradient-border flex h-full items-center gap-4 rounded-xl bg-card p-6 transition-all"
+                      whileHover={{ y: -5, boxShadow: "0 15px 30px -10px rgba(201,151,51,0.2)" }}
                     >
                       <BounceIcon>
                         <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center shrink-0">
@@ -347,7 +347,7 @@ export function ServicesContent() {
                 <StaggerItem key={index}>
                   <HoverCard>
                     <motion.div
-                      className="flex items-center gap-4 p-6 bg-card rounded-xl border border-border hover:border-foreground/30 transition-all"
+                      className="gold-gradient-border flex items-center gap-4 rounded-xl bg-card p-6 transition-all"
                       whileHover={{ x: dir === "rtl" ? -8 : 8, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.15)" }}
                     >
                       <BounceIcon>
@@ -386,7 +386,7 @@ export function ServicesContent() {
               {visionPillars.map((pillar, index) => (
                 <StaggerItem key={pillar.titleKey}>
                   <HoverCard className="h-full">
-                    <div className="h-full rounded-xl border border-border bg-card p-6">
+                    <div className="gold-gradient-border h-full rounded-xl bg-card p-6">
                       <div className={`w-12 h-12 ${pillar.color} rounded-lg flex items-center justify-center mb-4`}>
                         <pillar.icon className={`w-6 h-6 ${index === 2 ? "text-background" : "text-foreground"}`} />
                       </div>
@@ -403,7 +403,7 @@ export function ServicesContent() {
                 <h3 className="text-2xl font-bold text-foreground mb-6">{t("investment.advantages.title")}</h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {investmentAdvantages.map((advantage) => (
-                    <div key={advantage.titleKey} className="rounded-xl border border-border bg-card p-5">
+                    <div key={advantage.titleKey} className="gold-gradient-border rounded-xl bg-card p-5">
                       <advantage.icon className="w-6 h-6 text-primary mb-3" />
                       <h4 className="font-semibold text-foreground mb-2">{t(advantage.titleKey)}</h4>
                       <p className="text-sm text-muted-foreground">{t(advantage.descKey)}</p>
@@ -416,7 +416,7 @@ export function ServicesContent() {
                 <h3 className="text-2xl font-bold text-foreground mb-6">{t("investment.resources.title")}</h3>
                 <div className="grid gap-4">
                   {investmentResources.map((resource) => (
-                    <div key={resource.labelEn} className="rounded-xl border border-border bg-card p-6">
+                    <div key={resource.labelEn} className="gold-gradient-border rounded-xl bg-card p-6">
                       <resource.icon className="w-7 h-7 text-accent mb-4" />
                       <p className="text-2xl font-bold text-foreground">
                         {language === "ar" ? resource.valueAr : resource.valueEn}
@@ -437,7 +437,7 @@ export function ServicesContent() {
                 <p className="text-background/70">{t("investment.misa.desc")}</p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-card p-8">
+              <div className="gold-gradient-border rounded-2xl bg-card p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-6">{t("investment.process.title")}</h3>
                 <div className="grid gap-4">
                   {investmentProcess.map((step) => (
@@ -492,7 +492,7 @@ export function ServicesContent() {
                 <h3 className="text-2xl font-bold text-foreground mb-6">{t("localization.timeline.title")}</h3>
                 <div className="grid gap-4">
                   {localizationTimeline.map((step) => (
-                    <div key={step.monthEn} className="flex gap-4 rounded-xl border border-border bg-card p-5">
+                    <div key={step.monthEn} className="gold-gradient-border flex gap-4 rounded-xl bg-card p-5">
                       <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                         <step.icon className="w-5 h-5 text-primary" />
                       </div>
@@ -513,7 +513,7 @@ export function ServicesContent() {
                 <h3 className="text-2xl font-bold text-foreground mb-6">{t("localization.authorities.title")}</h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {localizationAuthorities.map((authority) => (
-                    <div key={authority.abbr} className="rounded-xl border border-border bg-card p-5 text-center">
+                    <div key={authority.abbr} className="gold-gradient-border rounded-xl bg-card p-5 text-center">
                       <authority.icon className="w-7 h-7 text-primary mx-auto mb-3" />
                       <span className="block text-lg font-bold text-primary mb-2">{authority.abbr}</span>
                       <p className="text-sm text-muted-foreground">{t(authority.key)}</p>
@@ -528,7 +528,7 @@ export function ServicesContent() {
                 <h3 className="text-2xl font-bold text-foreground mb-6">{t("localization.cities.title")}</h3>
                 <div className="grid md:grid-cols-3 gap-4">
                   {industrialCities.map((city) => (
-                    <div key={city.nameEn} className="rounded-xl border border-border bg-card p-5">
+                    <div key={city.nameEn} className="gold-gradient-border rounded-xl bg-card p-5">
                       <MapPin className="w-6 h-6 text-primary mb-3" />
                       <h4 className="text-xl font-bold text-foreground mb-3">
                         {language === "ar" ? city.nameAr : city.nameEn}
@@ -544,7 +544,7 @@ export function ServicesContent() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 rounded-xl border border-border bg-card p-5">
+                <div className="gold-gradient-border mt-4 rounded-xl bg-card p-5">
                   <h4 className="font-semibold text-foreground mb-2">{t("localization.modon")}</h4>
                   <p className="text-sm text-muted-foreground">{t("localization.modon.desc")}</p>
                 </div>
@@ -583,7 +583,7 @@ export function ServicesContent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               {taxTypes.map((tax) => (
-                <div key={tax.titleKey} className="rounded-2xl border border-border bg-card p-6">
+                <div key={tax.titleKey} className="gold-gradient-border rounded-2xl bg-card p-6">
                   <div className="flex items-start justify-between gap-4 mb-5">
                     <tax.icon className="w-8 h-8 text-primary" />
                     <span className="rounded-full bg-primary px-4 py-2 text-lg font-bold text-primary-foreground">
@@ -598,7 +598,7 @@ export function ServicesContent() {
               ))}
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-8">
+            <div className="gold-gradient-border rounded-2xl bg-card p-8">
               <div className="flex items-center gap-3 mb-6">
                 <Info className="w-6 h-6 text-accent" />
                 <h3 className="text-2xl font-bold text-foreground">
@@ -628,9 +628,9 @@ export function ServicesContent() {
           className="absolute inset-0"
           animate={{ 
             background: [
-              "radial-gradient(circle at 20% 50%, rgba(0, 108, 53, 0.2) 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 50%, rgba(218, 165, 32, 0.2) 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 50%, rgba(0, 108, 53, 0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, rgba(31, 79, 143, 0.24) 0%, transparent 50%)",
+              "radial-gradient(circle at 80% 50%, rgba(201, 151, 51, 0.22) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, rgba(18, 129, 91, 0.20) 0%, transparent 50%)",
             ]
           }}
           transition={{ duration: 10, repeat: Infinity }}

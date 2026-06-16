@@ -112,8 +112,8 @@ export function WhySaudiSection() {
                     whileHover={{ scale: 1.1 }}
                     animate={{ 
                       boxShadow: [
-                        "0 0 0 0 rgba(0, 108, 53, 0.4)",
-                        "0 0 0 20px rgba(0, 108, 53, 0)",
+                        "0 0 0 0 rgba(31, 79, 143, 0.38)",
+                        "0 0 0 20px rgba(31, 79, 143, 0)",
                       ]
                     }}
                     transition={{
@@ -129,7 +129,7 @@ export function WhySaudiSection() {
                   {/* Connecting regions with animation */}
                   <FloatingElement duration={3} y={8} className="absolute top-8 left-1/2 -translate-x-1/2">
                     <motion.div 
-                      className="px-4 py-2 bg-card rounded-full border border-border shadow-sm"
+                      className="gold-gradient-border rounded-full bg-card px-4 py-2 shadow-sm"
                       whileHover={{ scale: 1.1, y: -5 }}
                     >
                       <span className="text-sm font-medium">Europe</span>
@@ -137,7 +137,7 @@ export function WhySaudiSection() {
                   </FloatingElement>
                   <FloatingElement duration={4} y={10} className="absolute bottom-8 left-8">
                     <motion.div 
-                      className="px-4 py-2 bg-card rounded-full border border-border shadow-sm"
+                      className="gold-gradient-border rounded-full bg-card px-4 py-2 shadow-sm"
                       whileHover={{ scale: 1.1, y: -5 }}
                     >
                       <span className="text-sm font-medium">Africa</span>
@@ -145,7 +145,7 @@ export function WhySaudiSection() {
                   </FloatingElement>
                   <FloatingElement duration={3.5} y={12} className="absolute bottom-8 right-8">
                     <motion.div 
-                      className="px-4 py-2 bg-card rounded-full border border-border shadow-sm"
+                      className="gold-gradient-border rounded-full bg-card px-4 py-2 shadow-sm"
                       whileHover={{ scale: 1.1, y: -5 }}
                     >
                       <span className="text-sm font-medium">Asia</span>
@@ -188,7 +188,7 @@ export function WhySaudiSection() {
               {/* Floating stats */}
               <FloatingElement duration={3} y={8}>
                 <motion.div 
-                  className="absolute -bottom-4 -left-4 p-4 bg-card rounded-xl border border-border shadow-lg"
+                  className="gold-gradient-border absolute -bottom-4 -left-4 rounded-xl bg-card p-4 shadow-lg"
                   whileHover={{ scale: 1.1, rotate: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -200,7 +200,7 @@ export function WhySaudiSection() {
               </FloatingElement>
               <FloatingElement duration={4} y={10}>
                 <motion.div 
-                  className="absolute -top-4 -right-4 p-4 bg-card rounded-xl border border-border shadow-lg"
+                  className="gold-gradient-border absolute -top-4 -right-4 rounded-xl bg-card p-4 shadow-lg"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >

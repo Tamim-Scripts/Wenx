@@ -158,7 +158,7 @@ export function ProjectsContent() {
             {partnerships.map((partner, index) => (
               <div
                 key={index}
-                className="p-8 bg-card rounded-2xl border border-border text-center hover:border-primary/30 hover:shadow-lg transition-all"
+                className="gold-gradient-border rounded-2xl bg-card p-8 text-center transition-all hover:shadow-lg"
               >
                 <div className="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6">
                   <Building2 className="w-8 h-8 text-primary-foreground" />
@@ -191,7 +191,7 @@ export function ProjectsContent() {
             {successStories.map((story, index) => (
               <div
                 key={index}
-                className="p-6 bg-card rounded-xl border border-border hover:border-accent/30 hover:shadow-lg transition-all"
+                className="gold-gradient-border rounded-xl bg-card p-6 transition-all hover:shadow-lg"
               >
                 <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full mb-4">
                   {language === "ar" ? story.sectorAr : story.sector}

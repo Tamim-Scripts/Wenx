@@ -38,7 +38,7 @@ export function HeroVisual() {
   const panelTransform = useMotionTemplate`perspective(1800px) rotateX(${smoothRotateX}deg) rotateY(${smoothRotateY}deg)`
   const shadowX = useTransform(smoothRotateY, [-14, 14], [-30, 30])
   const shadowY = useTransform(smoothRotateX, [-14, 14], [20, -20])
-  const shadow = useMotionTemplate`${shadowX}px ${shadowY}px 80px rgba(0, 76, 38, 0.18)`
+  const shadow = useMotionTemplate`${shadowX}px ${shadowY}px 80px rgba(31, 79, 143, 0.18)`
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     const bounds = event.currentTarget.getBoundingClientRect()
@@ -93,7 +93,7 @@ export function HeroVisual() {
 
         {/* Globe */}
         <motion.div
-          className="absolute inset-[22%] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.95),rgba(230,244,236,0.92)_18%,rgba(0,108,53,0.95)_52%,rgba(5,44,22,0.98)_100%)]"
+          className="absolute inset-[22%] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.96),rgba(229,240,252,0.94)_18%,rgba(31,79,143,0.96)_48%,rgba(18,129,91,0.94)_72%,rgba(19,41,75,0.98)_100%)]"
           style={{ transform: "translateZ(72px)" }}
           animate={{ rotate: [0, 6, -4, 0] }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}

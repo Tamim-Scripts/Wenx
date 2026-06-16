@@ -294,7 +294,7 @@ export function ContactContent() {
                   <StaggerItem>
                     <HoverCard>
                       <motion.div 
-                        className="p-6 bg-card rounded-xl border border-border"
+                        className="gold-gradient-border rounded-xl bg-card p-6"
                         whileHover={{ borderColor: "hsl(var(--primary) / 0.3)" }}
                       >
                         <div className="flex items-start gap-4">
@@ -320,7 +320,7 @@ export function ContactContent() {
                   <StaggerItem>
                     <HoverCard>
                       <motion.div 
-                        className="p-6 bg-card rounded-xl border border-border"
+                        className="gold-gradient-border rounded-xl bg-card p-6"
                         whileHover={{ borderColor: "hsl(var(--accent) / 0.3)" }}
                       >
                         <div className="flex items-start gap-4">
@@ -346,7 +346,7 @@ export function ContactContent() {
                   <StaggerItem>
                     <HoverCard>
                       <motion.div 
-                        className="p-6 bg-card rounded-xl border border-border"
+                        className="gold-gradient-border rounded-xl bg-card p-6"
                         whileHover={{ borderColor: "hsl(var(--primary) / 0.3)" }}
                       >
                         <div className="flex items-start gap-4">
@@ -372,7 +372,7 @@ export function ContactContent() {
                   <StaggerItem>
                     <HoverCard>
                       <motion.div 
-                        className="p-6 bg-card rounded-xl border border-border"
+                        className="gold-gradient-border rounded-xl bg-card p-6"
                         whileHover={{ borderColor: "hsl(var(--foreground) / 0.2)" }}
                       >
                         <div className="flex items-start gap-4">
@@ -436,9 +436,9 @@ export function ContactContent() {
           className="absolute inset-0"
           animate={{ 
             background: [
-              "radial-gradient(circle at 20% 50%, rgba(0, 108, 53, 0.2) 0%, transparent 50%)",
-              "radial-gradient(circle at 80% 50%, rgba(218, 165, 32, 0.2) 0%, transparent 50%)",
-              "radial-gradient(circle at 20% 50%, rgba(0, 108, 53, 0.2) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, rgba(31, 79, 143, 0.24) 0%, transparent 50%)",
+              "radial-gradient(circle at 80% 50%, rgba(201, 151, 51, 0.22) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 50%, rgba(18, 129, 91, 0.20) 0%, transparent 50%)",
             ]
           }}
           transition={{ duration: 10, repeat: Infinity }}

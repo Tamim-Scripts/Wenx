@@ -97,14 +97,14 @@ export function LocalizationTimelineSection() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div className="relative rounded-3xl border border-border bg-card/80 p-5 shadow-xl shadow-primary/5 backdrop-blur sm:p-8 lg:p-10">
+          <div className="gold-gradient-border relative rounded-3xl bg-card/80 p-5 shadow-xl shadow-primary/5 backdrop-blur sm:p-8 lg:p-10">
             <div className="absolute inset-x-10 top-[7.15rem] hidden h-1 rounded-full bg-gradient-to-r from-primary/25 via-accent/35 to-primary/25 lg:block" />
 
             <StaggerContainer staggerDelay={0.12} className="grid gap-5 lg:grid-cols-4 lg:gap-6">
               {timelineSteps.map((step, index) => (
                 <StaggerItem key={step.titleKey}>
                   <motion.article
-                    className="group relative h-full rounded-2xl border border-border bg-background p-5 shadow-sm transition-colors hover:border-primary/30"
+                    className="gold-gradient-border group relative h-full rounded-2xl bg-background p-5 shadow-sm transition-colors"
                     whileHover={{ y: -8 }}
                     transition={{ type: "spring", stiffness: 260, damping: 22 }}
                   >
@@ -149,8 +149,8 @@ export function LocalizationTimelineSection() {
           {setupStats.map((stat) => (
             <StaggerItem key={stat.labelKey}>
               <motion.div
-                className="flex h-full items-center gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm"
-                whileHover={{ y: -4, borderColor: "rgba(0, 108, 53, 0.3)" }}
+                className="gold-gradient-border flex h-full items-center gap-4 rounded-2xl bg-card p-5 shadow-sm"
+                whileHover={{ y: -4, borderColor: "rgba(31, 79, 143, 0.32)" }}
                 transition={{ type: "spring", stiffness: 280, damping: 24 }}
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">

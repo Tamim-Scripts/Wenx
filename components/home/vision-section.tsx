@@ -115,7 +115,7 @@ export function VisionSection() {
                 <div className="absolute bottom-5 left-5 right-5">
                   <motion.div
                     className="inline-flex items-center gap-4 rounded-2xl border border-background/25 bg-foreground/45 px-5 py-4 shadow-xl shadow-black/20 backdrop-blur-md"
-                    whileHover={{ scale: 1.04, backgroundColor: "rgba(24, 36, 28, 0.58)" }}
+                    whileHover={{ scale: 1.04, backgroundColor: "rgba(19, 41, 75, 0.68)" }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <motion.div

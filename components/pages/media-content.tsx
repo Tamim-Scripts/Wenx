@@ -342,7 +342,7 @@ export function MediaContent() {
               {filteredArticles.map((article) => (
                 <StaggerItem key={article.id}>
                   <motion.div
-                    className="group h-full bg-card border border-border rounded-xl overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all"
+                    className="gold-gradient-border group h-full overflow-hidden rounded-xl bg-card transition-all hover:shadow-lg"
                     whileHover={{ y: -5 }}
                   >
                     <div className="relative overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10 p-8 h-40 flex items-center justify-center text-5xl">
@@ -391,7 +391,7 @@ export function MediaContent() {
               ))}
             </StaggerContainer>
           ) : (
-            <div className="max-w-3xl mx-auto rounded-2xl border border-border bg-card px-6 py-12 text-center">
+            <div className="gold-gradient-border max-w-3xl mx-auto rounded-2xl bg-card px-6 py-12 text-center">
               <h3 className="text-2xl font-bold text-foreground mb-3">{copy.emptyTitle}</h3>
               <p className="text-muted-foreground mb-6">{copy.emptyBody}</p>
               <Button onClick={() => setActiveCategory("all")}>{copy.allCategories}</Button>

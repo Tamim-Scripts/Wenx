@@ -81,9 +81,9 @@ export function HeroSection() {
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   <PulseRing>
-                    <div className="h-2 w-2 rounded-full bg-green-600" />
+                    <div className="h-2 w-2 rounded-full bg-accent" />
                   </PulseRing>
-                  <span className="text-sm font-medium text-green-700">{t("hero.badge")}</span>
+                  <span className="text-sm font-medium text-primary">{t("hero.badge")}</span>
                 </motion.div>
               </FadeIn>
 
@@ -93,17 +93,17 @@ export function HeroSection() {
                   {isRtl ? (
                     <>
                       بوابتك إلى{" "}
-                      <span className="text-green-600">الاستثمار</span>
+                      <span className="text-primary">الاستثمار</span>
                       {" "}و
-                      <span className="text-amber-500"> التوطين</span>
+                      <span className="text-accent"> التوطين</span>
                       {" "}في المملكة العربية السعودية
                     </>
                   ) : (
                     <>
                       Your Gateway to{" "}
-                      <span className="text-green-600">Investment</span>
+                      <span className="text-primary">Investment</span>
                       {" "}&{" "}
-                      <span className="text-amber-500">Localization</span>
+                      <span className="text-accent">Localization</span>
                       {" "}in Saudi Arabia
                     </>
                   )}
@@ -127,7 +127,7 @@ export function HeroSection() {
                       <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
                         <Button
                           size="lg"
-                          className="glass-panel-strong h-12 bg-primary/90 px-8 text-base text-primary-foreground hover:bg-primary"
+                          className="h-12 bg-primary px-8 text-base text-primary-foreground shadow-lg shadow-primary/20 hover:bg-primary/90"
                         >
                           {t("hero.cta.start")}
                           <motion.span
@@ -148,7 +148,7 @@ export function HeroSection() {
                         <Button
                           size="lg"
                           variant="outline"
-                          className="glass-panel h-12 border-white/40 px-8 text-base"
+                          className="glass-panel h-12 border-primary/15 px-8 text-base hover:border-primary/30 hover:bg-primary/5"
                         >
                           {t("hero.cta.explore")}
                         </Button>
@@ -176,10 +176,10 @@ export function HeroSection() {
             {STATS.map((stat) => (
               <StaggerItem key={stat.id}>
                 <motion.div
-                  className="glass-panel flex cursor-default flex-col items-center rounded-2xl p-5 text-center transition-all hover:border-green-500/30 hover:shadow-lg"
+                  className="glass-panel gold-gradient-border flex cursor-default flex-col items-center rounded-2xl p-5 text-center transition-all hover:shadow-lg"
                   whileHover={{ y: -4 }}
                 >
-                  <p className="mb-1 text-2xl font-bold text-green-600 sm:text-3xl">
+                  <p className="mb-1 text-2xl font-bold text-primary sm:text-3xl">
                     {stat.valueKey ? t(stat.valueKey) : stat.value}
                   </p>
                   <p className="mb-1 text-sm font-semibold text-foreground">{t(stat.labelKey)}</p>
